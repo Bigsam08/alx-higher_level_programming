@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * add_nodeint - adds  new node at the begining 
+ * add_nodeint - adds  new node at the begining
  * @head: pointer to a pointer of the start of the list
  * @n: integer included in node
  * Return: NULL at failure or address of the new element
@@ -15,12 +15,10 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
     add = malloc(sizeof(listint_t));
     if (add == NULL)
-        return (NULL);
-
+            return (NULL);
     add->n = n;
     add->next = *head;
     *head = add;
-
     return (add);
 }
 
@@ -32,8 +30,8 @@ listint_t *add_nodeint(listint_t **head, const int n)
  */
 size_t print_listint(const listint_t *h)
 {
+    unsigned int n;
     const listint_t *current;
-    unsigned int n; 
     n = 0;
     current = h;
     while (current != NULL)
