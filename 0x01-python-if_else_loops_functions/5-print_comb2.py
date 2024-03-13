@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for digit in range(0, 100):
-    if digit == 99:
-        print("{}".format(digit))
+    if digit <= 99:
+        print(f"{digit: 02}", end=",", "{\n}")
     else:
-        print("{:02}".format(digit), end=', ')
+        print("\n")
