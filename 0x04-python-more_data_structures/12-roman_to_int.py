@@ -1,7 +1,13 @@
 #!/usr/bin/python3
 
+"""
+roman figures are alphabets attached to a specific number
+this is a function that converts romnan numbers to numbers
+"""
+
+
 def roman_to_int(roman_string):
-    if type(roman_string) != str or roman_string is None:
+    if not isinstance(roman_string, str) or roman_string is None:
         return 0
 
     rom_fig = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
