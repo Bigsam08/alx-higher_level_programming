@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""drawing a square class"""
+
+
 class Square:
-    """drawing a square."""
+    """an empty square class"""
+
     pass
