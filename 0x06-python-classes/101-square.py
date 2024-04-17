@@ -60,6 +60,5 @@ class Square:
         if self.size == 0:
             return char
         char += "\n" * self.position[1]
-        char += "\n".join((" " * self.position[0] + "#" * self.size))
-        for p in range(self.size):
-            return char
+        char += "\n".join((" " * self.position[0] + "#" * self.size)for p in range(self.size))
+        return char
