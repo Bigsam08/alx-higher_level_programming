@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"class square """
+""" class square """
 
 
 class Square:
@@ -7,7 +7,7 @@ class Square:
     """ defining the square """
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialization"""
+        """ Initialization """
         self.size = size
         self.position = position
 
@@ -39,11 +39,11 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
-        """return the area of the square"""
+        """ return the area of the square """
         return (self.__size * self.__size)
 
     def my_print(self):
-        """print square set by user"""
+        """ print square set by user """
         if (self.__size == 0):
             print()
         else:
@@ -59,7 +59,7 @@ class Square:
 
     def __str__(self):
         char = ""
-        """Prints character #"""
+        """ Prints character # """
         if self.__size == 0:
             return char
         else:
