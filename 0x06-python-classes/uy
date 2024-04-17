@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-""" class square """
+"""
+create a class Square
+"""
 
 
 class Square:
-
-    """ defining the square """
+    """
+    Define the setter and getter for the size
+    """
 
     def __init__(self, size=0, position=(0, 0)):
-        """ Initialization """
+        """Initialize the square"""
         self.size = size
         self.position = position
 
     @property
-    """" size and position of square """
     def size(self):
         return self.__size
 
@@ -39,33 +41,33 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
-        """ return the area of the square """
+        """return the area of the square"""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """ print square set by user """
+        """print the square depending of the size received"""
         if (self.__size == 0):
             print()
         else:
             if (self.__position[1] > 0):
-                for i in range(self.__position[1]):
+                for sn in range(self.__position[1]):
                     print()
-            for p in range(self.__size):
-                for j in range(self.__position[0]):
+            for n in range(self.__size):
+                for s in range(self.__position[0]):
                     print(' ', end="")
                 for y in range(self.__size):
                     print('#', end="")
                 print()
 
     def __str__(self):
-        char = ""
-        """ Prints character # """
+        string = ""
+        """Prints in stdout the square with the character #"""
         if self.__size == 0:
-            return char
+            return string
         else:
             if self.__position[1] > 0:
-                for m in range(self.__position[1]):
-                    char += "\n"
-            for m in range(self.__size):
-                char += " " * self.__position[0] + "#" * self.__size + '\n'
-        return char[:-1]
+                for pos in range(self.__position[1]):
+                    string += "\n"
+            for pos in range(self.__size):
+                string += " " * self.__position[0] + "#" * self.__size + '\n'
+        return string[:-1]
