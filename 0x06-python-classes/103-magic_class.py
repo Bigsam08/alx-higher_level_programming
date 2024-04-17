@@ -2,8 +2,10 @@
 """ magic class """
 import math
 
+
 class MagicClass:
     """ starting the MagicClass."""
+
     def __init__(self, radius=0):
         """Initializing data."""
         self._MagicClass__radius = 0
