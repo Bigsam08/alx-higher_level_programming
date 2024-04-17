@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-a test addition of two integers.
-"""
+This module contains the doctest for the add_integer function.
 
 >>> add_integer(1, 2)
 3
@@ -19,3 +18,4 @@ TypeError: a must be an integer or b must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer or b must be an integer
+"""
