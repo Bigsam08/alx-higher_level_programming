@@ -4,6 +4,6 @@ import json
 
 
 def load_from_json_file(filename):
-   """  Return: The python form of json"""
+    """ returns  The python form of json """
     with open(filename, "r", encoding="utf-8") as new_file:
         return json.loads(new_file.read())
