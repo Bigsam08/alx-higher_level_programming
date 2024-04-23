@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+""" operator invert"""
+
 
 class MyInt(int):
-    def __eq__(self, other):
-        """ Invert the ==  operator """
-        return super().__ne__(other)
+    """Invert int operators == and !="""
 
-    def __ne__(self, other):
-        """ Invert the != operator """
-        return super().__eq__(other)
+    def __eq__(self, value):
+        """ invert != opeartor """
+        return self.real != value
+
+    def __ne__(self, value):
+        """invert == operator """
+        return self.real == value
