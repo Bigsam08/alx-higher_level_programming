@@ -1,19 +1,9 @@
 #!/usr/bin/python3
-""" checks if an object is
-    instance of  class
-"""
+""" check if object is of same class instance """
 
 
 def is_same_class(obj, a_class):
     """
-
-        Args:
-        obj (any): The object to check.
-        a_class (type): The class to match the type of obj to
-
-        Returns True if the object and class are of the same instance
-        Returns False if not
+    Return true if the object is an instance of a class
     """
-    if type(obj) == a_class:
-        return True
-    return False
+    return type(obj) == a_class
