@@ -5,7 +5,7 @@
 
 
 def is_same_class(obj, a_class):
-    """ 
+    """
 
         Args:
         obj (any): The object to check.
