@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-""" MyList class objects """
+""" inheritance class list"""
 
 
 class MyList(list):
-    def __init__(self):
-        """initializes the object"""
-        super().__init__()
+    """ a sub-class list """
 
     def print_sorted(self):
-        """prints out sorted list"""
+        """ Prints a list in ascending order """
         print(sorted(self))
