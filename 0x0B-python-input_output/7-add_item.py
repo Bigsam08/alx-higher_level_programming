@@ -1,17 +1,15 @@
 #!/usr/bin/python3
-"""
-    Adding argument list into a file named store
-"""
+""" A function thst adds argv to list """
 import sys
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-if __name__ == "__main__":
-    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-    load_from_json_file = \
-        __import__('6-load_from_json_file').load_from_json_file
 
-    try:
-        store = load_from_json_file("add_item.json")
-    except FileNotFoundError:
-        store = []
-    store.extend(sys.argv[1:])
-    save_to_json_file(store, "add_item.json")
+try:
+    lst = load_from_json_file("add_item.json")
+except FileNotFoundError:
+    lst = []
+
+for i in sys.argv[1:]:
+    lst.append(i)
+save_to_json_file(lst, "add_item.json")
