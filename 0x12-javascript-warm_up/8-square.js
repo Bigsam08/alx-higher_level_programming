@@ -2,7 +2,7 @@
 // print square in the number of times given in argv[2]
 // print char 'x'
 
-const symbol = 'x';
+const symbol = 'X';
 const times = Number(process.argv[2]);
 let i = 0;
 let k = 0;
