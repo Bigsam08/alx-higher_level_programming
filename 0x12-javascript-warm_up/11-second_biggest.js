@@ -4,7 +4,7 @@
 
 const arg = process.argv.slice(2).map(Number);
 
-if (arg.length === 0  || arg.length === 1) {
+if (arg.length === 0 || arg.length === 1) {
   console.log('0');
 } else {
   const biggest = Math.max(...arg);
