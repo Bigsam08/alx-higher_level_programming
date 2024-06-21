@@ -4,10 +4,7 @@
 
 class Rectangle {
   constructor (w, h) {
-    if (!Number.isInteger || !Number.isInteger || w <= 0 || h <= 0) {
-      this.width = undefined;
-      this.height = undefined;
-    } else {
+    if (Number.isInteger && Number.isInteger && w > 0 && h > 0) {
       this.width = w;
       this.height = h;
     }
