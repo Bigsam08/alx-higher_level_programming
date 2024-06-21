@@ -1,31 +1,8 @@
 #!/usr/bin/node
-// a JS that concatenate two files to a destination file.
-
+// add two files data and save it into a 3rd file using command-line
 const fs = require('fs');
-const fileA = process.argv[2];
-const fileB = process.argv[3];
+const fileA = fs.readFileSync(process.argv[2], 'utf8');
+const fileB = fs.readFileSync(process.argv[3], 'utf8');
 const fileC = process.argv[4];
-
-fs.readFile(fileA, 'utf8', function (err, data1) {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  fs.readFile(fileB, 'utf8', function (err, data2) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-
-    const contData = data1 + data2;
-
-    fs.writeFile(fileC, contData, function (err) {
-      if (err) {
-        console.error(err);
-        process.exit(1);
-      }
-
-      console.log(`${fileC}`);
-    });
-  });
-});
+const concatData = fileA + fileB;
+fs.writeFileSync(fileC, concatData);
