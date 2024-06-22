@@ -4,10 +4,11 @@
     print all states starting with 'N' only
 """
 
-if __name__ == '__main__':
-    import MySQLdb
-    import sys
+import MySQLdb
+import sys
 
+
+if __name__ == '__main__':
     conet = MySQLdb.connect(
             user=sys.argv[1],
             password=sys.argv[2],
@@ -16,8 +17,7 @@ if __name__ == '__main__':
             port=3306
             )
     cur = conet.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    
+    cur.execute("SELECT DISTINCT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     data = cur.fetchall()
     for r in data:
         print(r)
