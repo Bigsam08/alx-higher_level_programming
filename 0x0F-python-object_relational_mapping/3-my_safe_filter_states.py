@@ -15,8 +15,8 @@ if __name__ == "__main__":
             db=sys.argv[3]
             )
     cur = conet.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s\
-                ORDER BY states.id ASC".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name=%s\
+                ORDER BY states.id ASC", (sys.argv[4],))
     data = cur.fetchall()
     for val in data:
         print(val)
