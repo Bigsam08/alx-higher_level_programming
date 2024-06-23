@@ -21,7 +21,6 @@ if __name__ == '__main__':
                 WHERE states.name = %s\
                 ORDER BY cities.id ASC" (sys.argv[4],))
     data = cur.fetchall()
-    for val in data:
-        print(val)
+    print(*[val[0] for val in data], sep=', ')
     cur.close()
     conet.close()
