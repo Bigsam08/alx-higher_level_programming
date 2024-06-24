@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-""" working with sqlachmey, a python library """
-from sqlalchemy import Column, Integer, String
+""" sqlalchemy declarative base"""
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine
 
-Base = declarative_base()
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
+
+
 class State(Base):
+    """
+    Class with id and name attributes of each state
+    """
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
