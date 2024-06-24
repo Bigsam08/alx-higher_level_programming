@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script that prints all the cities in MySQL database
+""" Script that prints all the cities of a state in MySQL database
     using the python connector MySQLdb
 """
 
@@ -15,11 +15,10 @@ if __name__ == '__main__':
             db=sys.argv[3]
             )
     cur = conet.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name\
-                FROM cities LEFT JOIN states\
-                ON states.id = cities.state_id\
-                WHERE states.name = %s\
-                ORDER BY cities.id ASC" (sys.argv[4],))
+    cur.execute("SELECT cities.name\
+                FROM cities INNER JOIN states ON cities.state_id=states.id\
+                WHERE states.name=%s\
+                ORDER BY cities.id ASC", (sys.argv[4],))
     data = cur.fetchall()
     print(*[val[0] for val in data], sep=', ')
     cur.close()
