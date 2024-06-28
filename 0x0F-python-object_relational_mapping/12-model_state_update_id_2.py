@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
     update(change) a state in the database to MEXICO
 """
 import sys
