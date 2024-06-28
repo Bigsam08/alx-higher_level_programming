@@ -2,6 +2,7 @@
 """
     update(change) a state in the database to MEXICO
 """
+
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -15,5 +16,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     req = session.query(State).filter_by(id=2).first()
-    req = 'New Mexico'
+    req.name = 'New Mexico'
     session.commit()
