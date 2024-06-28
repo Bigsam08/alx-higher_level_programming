@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-    Class definition of a city into database
+    City class definition database
 """
+import sys
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import (create_engine)
@@ -15,6 +16,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for req in (session.query(State.name, City.id, City.name)
-                              .filter(State.id == City.state_id)):
-        print(req[0] + ": (" + str(req[1]) + ") " + req[2])
+    for instance in (session.query(State.name, City.id, City.name)
+                     .filter(State.id == City.state_id)):
+        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
