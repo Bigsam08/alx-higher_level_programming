@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-# a python script that takes a github USERNAME 
+# a python script that takes a github USERNAME
 # and  PASSWORD displaying the result using GITHUBAPI
 
 import requests
 import sys
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     url = 'https://api.github.com/user'
     username = sys.argv[1]
     password = sys.argv[2]
@@ -14,5 +14,5 @@ if __name__ = '__main__':
     dic = response.json()
     try:
         print(dic['id'])
-    except:
+    except KeyError:
         print('None')
