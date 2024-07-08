@@ -5,20 +5,19 @@ import sys
 import requests
 
 
-if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        q = ""
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        data = {'q': sys.argv[1]}
     else:
-        q = sys.argv[1]
+        q = {}
 
-    url = "http://0.0.0.0:5000/search_user"
-    response = requests.post(url, data={'q': q})
+    url = 'http://0.0.0.0:5000/search_user'
+    response = requests.post(url, data)
     try:
-        data = response.json()
-        if not data:
+        dic = response.json()
+        if len(dic) == 0:
             print("No result")
         else:
-            for detail in data:
-                print(F"[{detail['id']}] {detail['name']}")
+            print("[{}] {}".format(dic['id'], dic['name']))
     except ValueError:
         print("Not a valid JSON")
