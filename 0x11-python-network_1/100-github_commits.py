@@ -18,7 +18,6 @@ if __name__ == '__main__':
     response = requests.get(url)
     # save the commits as json
     commits = response.json()
-    commits.reverse()
     # iterate through all to get the last 10
     for i, last_ten in enumerate(commits):
         if i >= 10:
